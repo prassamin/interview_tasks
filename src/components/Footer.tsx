@@ -92,15 +92,15 @@ const Footer: React.FC = () => {
 
           {/* Section 2 */}
           <div className="flex flex-col gap-6 lg:pl-12 -mt-36 md:mt-0 flex-1">
-            <nav className="flex flex-col gap-9 xl:gap-11.5">
+            <nav className="flex flex-col items-start gap-9 xl:gap-11.5">
               {menuItems.map((item) => (
-                <a
+                <FooterLink
                   key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
                   className="text-[28px] 2xl:text-[38px] hover:text-white/60 transition-colors duration-300 tracking-tight font-display leading-[1.05]"
                 >
                   {item}
-                </a>
+                </FooterLink>
               ))}
             </nav>
           </div>
@@ -123,13 +123,13 @@ const Footer: React.FC = () => {
                 personal.
               </p>
 
-              <div className="flex flex-col gap-2">
-                <a
+              <div className="flex flex-col items-start gap-2">
+                <FooterLink
                   href="mailto:info@floka-design.com"
-                  className="text-lg hover:underline"
+                  className="text-lg hover:text-white/80 transition-colors"
                 >
                   info@floka-design.com
-                </a>
+                </FooterLink>
                 <p className="text-lg">+123 (456 789 00)</p>
                 <p className="text-lg">12/A, Booston Tower, NYC</p>
               </div>
@@ -151,16 +151,40 @@ const Footer: React.FC = () => {
       </div>
       <span className="text-muted/70 text-center my-7.5 text-lg leading-[0.95]">
         Copyright © 2025{" "}
-        <a
+        <FooterLink
           className="text-foreground"
           href="https://themeforest.net/user/case-themes/portfolio"
-          target="_blank"
         >
           Case-Themes
-        </a>
+        </FooterLink>
       </span>
     </footer>
   );
 };
 
 export default Footer;
+
+interface FooterLinkProps {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  target?: string;
+}
+
+const FooterLink: React.FC<FooterLinkProps> = ({
+  href,
+  children,
+  className = "",
+  target,
+}) => {
+  return (
+    <a
+      href={href}
+      target={target}
+      className={`relative group inline-block w-fit ${className}`}
+    >
+      {children}
+      <span className="absolute bottom-0 left-0 w-full h-px md:h-0.5 bg-white transform scale-x-0 origin-right transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left" />
+    </a>
+  );
+};

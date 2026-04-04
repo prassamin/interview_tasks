@@ -17,14 +17,27 @@
   --animate-shadow-pulse: shadow-pulse 1s ease-in-out infinite;
 }
 
+@utility container {
+  @apply max-[767px]:max-w-191.75 max-[1024px]:max-w-5xl max-w-330;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
 }
 
-button, a {
-  @apply cursor-pointer
+button,
+a {
+  @apply cursor-pointer;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
 }
 
 @keyframes shadow-pulse {

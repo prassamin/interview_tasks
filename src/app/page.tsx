@@ -1,5 +1,6 @@
 import BuyOnEnvato from "@/components/BuyOnEnvato";
 import Footer from "@/components/Footer";
+import BlogSection from "@/components/BlogSection";
 import NavigateToTop from "@/components/NavigateToTop";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <div className="h-screen flex items-center justify-center text-foreground/20 uppercase tracking-[0.5em] text-sm">
         Main Content Section
       </div>
+      <BlogSection />
       <Footer />
       <BuyOnEnvato />
       <NavigateToTop />
