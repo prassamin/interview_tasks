@@ -54,7 +54,7 @@ const BlogSection = () => {
   });
 
   return (
-    <section className="mt-15 lg:mt-20 xl:mt-30 bg-background overflow-hidden font-sans">
+    <section className="mt-15 lg:mt-20 xl:mt-30 overflow-hidden font-sans">
       <div className="container mx-auto">
         {/* HEADER */}
         <div className="flex flex-col items-center mb-16 xl:mb-24 px-5 mx-auto">
@@ -64,19 +64,19 @@ const BlogSection = () => {
 
           <SectionTitle
             text="Company blog & updates"
-            className="text-5xl font-display text-center tracking-tight leading-[1.1]"
+            className="text-[42px] lg:text-5xl font-display text-center tracking-tight leading-[1.1]"
           />
         </div>
 
         <div
-          className="overflow-hidden cursor-grab active:cursor-grabbing px-5"
+          className="overflow-hidden cursor-grab active:cursor-grabbing"
           ref={emblaRef}
         >
-          <div className="flex -ml-3">
+          <div className="flex">
             {blogs.map((blog, index) => (
               <div
                 key={index}
-                className={`flex-[0_0_103%] md:flex-[0_0_51%] lg:flex-[0_0_calc(100%/2.96)] pl-3 flex flex-col group gap-3 select-none ${
+                className={`flex-[0_0_98%] md:flex-[0_0_49.5%] lg:flex-[0_0_calc(100%/3)] pl-3 flex flex-col group gap-3 select-none ${
                   index % 2 === 0 ? "flex-col" : "flex-col-reverse"
                 }`}
               >
@@ -100,7 +100,7 @@ const BlogSection = () => {
                   className={`p-8 flex flex-col gap-6 rounded-3xl ${
                     index % 2 === 0
                       ? "bg-[#0F0F0F] text-white"
-                      : "bg-[#F5F5F5] text-black"
+                      : "bg-white text-black"
                   }`}
                 >
                   <div
