@@ -67,9 +67,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
+        {/* bottom section */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:flex gap-12.5 xl:gap-35 items-start mt-29.5">
-          {/* Section 1 */}
+          {/* section 1 */}
           <div className="relative group overflow-hidden md:col-span-2 sm:w-161.25 flex flex-col gap-5 flex-1.5">
             <div className="w-full h-full relative">
               <Image
@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
             <Floka />
           </div>
 
-          {/* Section 2 */}
+          {/* section 2 */}
           <div className="flex flex-col gap-6 lg:pl-12 -mt-36 md:mt-0 flex-1">
             <nav className="flex flex-col items-start gap-9 xl:gap-11.5">
               {menuItems.map((item) => (
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
             </nav>
           </div>
 
-          {/* Section 3 */}
+          {/* section 3 */}
           <div className="flex flex-col gap-11.25 max-w-full xl:max-w-none flex-2 relative">
             <Image
               src="/footer-icon-bg.png"

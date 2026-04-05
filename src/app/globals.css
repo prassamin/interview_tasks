@@ -33,6 +33,10 @@ body {
   font-family: var(--font-sans);
 }
 
+body{
+  @apply overflow-x-hidden
+}
+
 button,
 a {
   @apply cursor-pointer;

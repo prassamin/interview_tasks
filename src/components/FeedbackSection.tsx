@@ -124,7 +124,7 @@ const FeedbackSection = () => {
               {feedbacks.map((feedback, index) => (
                 <div
                   key={index}
-                  className={`flex-[0_0_98%] max-768:flex-[0_0_98%] max-1201:flex-[0_0_49.5%] flex-[0_0_calc(100%/3)] pl-3 flex flex-col group gap-3 select-none ${
+                  className={`max-768:flex-[0_0_98%] max-1201:flex-[0_0_49.5%] flex-[0_0_calc(100%/3)] pl-3 flex flex-col group gap-3 select-none ${
                     index % 2 === 0 ? "flex-col" : "flex-col-reverse"
                   }`}
                 >
