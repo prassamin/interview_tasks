@@ -65,7 +65,6 @@ const FAQSection = () => {
           <SectionTitle
             text="Have more questions?\nWe’ve answers."
             className="text-[42px] lg:text-5xl font-display tracking-tight leading-[1.1] lg:hidden"
-            once
           />
           <div className="lg:w-[30%] flex flex-col pt-4">
             <div className="flex flex-col gap-8 max-w-sm">
