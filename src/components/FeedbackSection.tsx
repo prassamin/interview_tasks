@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Image from "next/image";
@@ -99,7 +98,7 @@ const FeedbackSection = () => {
                 delay: 0.2,
                 ease: [0.215, 0.61, 0.355, 1],
               }}
-              className="text-[42px] lg:text-5xl font-display tracking-tight leading-[1.1] max-w-[70%]"
+              className="text-[42px] lg:text-5xl font-display tracking-tight leading-[1.1] md:max-w-[70%]"
             >
               Accelerating growth, and unlocking new potential.{" "}
               <div className="inline-flex items-center gap-2 mr-2">

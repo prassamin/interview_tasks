@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import BuyOnEnvato from "@/components/BuyOnEnvato";
 import NavigateToTop from "@/components/NavigateToTop";
 import FeedbackSection from "@/components/FeedbackSection";
+import HappyUsersSection from "@/components/HappyUsersSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="h-screen flex items-center justify-center text-foreground/20 uppercase tracking-[0.5em] text-sm">
         Main Content Section
       </div>
+      <HappyUsersSection />
       <FeedbackSection />
       <ContactSection />
       <AwardsSection />
