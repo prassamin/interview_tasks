@@ -53,11 +53,31 @@ const expertiseItems = [
 
 const ExpertiseSection = () => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(1);
+  const sectionRef = React.useRef<HTMLElement>(null);
+
+  React.useLayoutEffect(() => {
+    if (!sectionRef.current) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "bottom bottom",
+        pin: true,
+        pinSpacing: false,
+        end: "bottom top",
+      });
+    });
+
+    return () => mm.revert();
+  }, []);
 
   return (
     <section
+      ref={sectionRef}
       className={cn(
-        "max-1025:mt-15 max-1201:mt-20 mt-30 mx-5",
+        "max-1025:mt-15 max-1201:mt-20 mt-30 mx-5 relative z-0",
         "bg-black text-white rounded-2xl",
         "px-3.75 max-1367:pt-20 pt-30",
       )}

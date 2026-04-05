@@ -45,7 +45,7 @@ const FunFactsSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative max-1025:mt-15 max-1201:mt-20 mt-30"
+      className="relative z-10 bg-background max-1025:mt-15 max-1201:mt-20 mt-30"
     >
       <div className="container mx-auto px-5">
         <div className="flex flex-col 768:flex-row gap-5 1201:gap-30 relative">
