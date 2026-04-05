@@ -26,18 +26,18 @@ const AwardsSection = () => {
   return (
     <section
       ref={containerRef}
-      className="mt-15 lg:mt-20 xl:mt-30 font-sans bg-transparent"
+      className="max-1025:mt-15 max-1201:mt-20 mt-30 font-sans bg-transparent"
     >
       <div className="container mx-auto px-5">
-        <div className="flex flex-col md:flex-row gap-20 xl:gap-50">
+        <div className="flex flex-col 768:flex-row gap-20 1201:gap-50">
           {/* left */}
-          <div className=" sm:w-1/2 md:w-[40%] lg:w-[25%] flex flex-col gap-8">
+          <div className="max-768:w-full 768:w-[40%] 1025:w-[25%] flex flex-col gap-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }}
-              className="relative aspect-square rounded-4xl overflow-hidden bg-muted/20 mt-0 min-[991px]:mt-33.75 lg:mt-38.5 min-[1366px]:mt-37.5"
+              className="relative aspect-square rounded-4xl overflow-hidden bg-muted/20 mt-0 992:mt-33.75 lg:mt-38.5 1367:mt-37.5"
             >
               <Image
                 src="/floka_footer_image.png"

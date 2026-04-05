@@ -7,21 +7,21 @@ import SectionTitle from "./SectionTitle";
 
 const ContactSection = () => {
   return (
-    <section className="px-5 mt-15 lg:mt-20 xl:mt-30">
+    <section className="px-5 max-1025:mt-15 max-1201:mt-20 mt-30">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative overflow-hidden rounded-3xl px-6 py-16 md:px-12 lg:p-20 xl:p-24 bg-[#0A0A0A]"
+        className="relative overflow-hidden rounded-3xl px-6 py-16 1025:p-20 1201:p-24 bg-[#0A0A0A]"
       >
         <div
           className="absolute inset-0 opacity-50 pointer-events-none bg-cover bg-center"
           style={{ backgroundImage: "url('/bg-pattern.jpg')" }}
         />
-        <div className="relative z-10 flex flex-col lg:flex-row gap-16 xl:gap-24 container mx-auto items-center">
+        <div className="relative z-10 flex flex-col 1025:flex-row gap-16 1201:gap-24 container mx-auto items-center">
           {/* left */}
-          <div className="lg:w-[50%] flex flex-col gap-10">
+          <div className="1025:w-[50%] flex flex-col gap-10">
             <div className="flex flex-col gap-6">
               <span className="text-xs font-bold tracking-[0.2em] text-white/50 uppercase font-display">
                 GET IN TOUCH

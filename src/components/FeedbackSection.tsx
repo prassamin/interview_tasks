@@ -82,7 +82,7 @@ const FeedbackSection = () => {
   });
 
   return (
-    <section className="mt-15 lg:mt-20 xl:mt-30 font-sans overflow-hidden">
+    <section className="max-1025:mt-15 max-1201:mt-20 mt-30 font-sans overflow-hidden">
       <div className="container mx-auto px-5 flex flex-col">
         <span className="text-xs uppercase tracking-widest text-foreground mb-10 font-medium font-display border-b border-muted/10 py-3.5 w-full">
           user feedbacks
@@ -98,7 +98,7 @@ const FeedbackSection = () => {
                 delay: 0.2,
                 ease: [0.215, 0.61, 0.355, 1],
               }}
-              className="text-[42px] lg:text-5xl font-display tracking-tight leading-[1.1] md:max-w-[70%]"
+              className="text-[42px] max-1025:text-[42px] 1025:text-5xl font-display tracking-tight leading-[1.1] 768:max-w-[70%]"
             >
               Accelerating growth, and unlocking new potential.{" "}
               <div className="inline-flex items-center gap-2 mr-2">
@@ -124,7 +124,7 @@ const FeedbackSection = () => {
               {feedbacks.map((feedback, index) => (
                 <div
                   key={index}
-                  className={`flex-[0_0_98%] md:flex-[0_0_49.5%] lg:flex-[0_0_calc(100%/3)] pl-3 flex flex-col group gap-3 select-none ${
+                  className={`flex-[0_0_98%] max-768:flex-[0_0_98%] max-1201:flex-[0_0_49.5%] flex-[0_0_calc(100%/3)] pl-3 flex flex-col group gap-3 select-none ${
                     index % 2 === 0 ? "flex-col" : "flex-col-reverse"
                   }`}
                 >

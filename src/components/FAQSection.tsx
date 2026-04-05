@@ -56,17 +56,17 @@ const FAQSection = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
 
   return (
-    <section className="mt-15 lg:mt-20 xl:mt-30 font-sans overflow-hidden">
+    <section className="max-1025:mt-15 max-1201:mt-20 mt-30 font-sans overflow-hidden">
       <div className="container mx-auto px-5 flex flex-col">
         <span className="text-xs uppercase tracking-widest text-foreground mb-10 font-medium font-display border-b border-muted/10 py-3.5 w-full">
           FAQ & GET ANSWER
         </span>
-        <div className="flex flex-col lg:flex-row  lg:items-end gap-16 xl:gap-44">
+        <div className="flex flex-col 1025:flex-row  1025:items-end gap-16 1201:gap-44">
           <SectionTitle
             text="Have more questions?\nWe’ve answers."
-            className="text-[42px] lg:text-5xl font-display tracking-tight leading-[1.1] lg:hidden"
+            className="text-[42px] max-1025:text-[42px] 1025:text-5xl font-display tracking-tight leading-[1.1] 1025:hidden"
           />
-          <div className="lg:w-[30%] flex flex-col pt-4">
+          <div className="1025:w-[30%] flex flex-col pt-4">
             <div className="flex flex-col gap-8 max-w-sm">
               <p className="text-foreground/60 leading-relaxed">
                 Don&apos;t found anything yet. Feel free to ask anything.{" "}
@@ -89,10 +89,10 @@ const FAQSection = () => {
             </div>
           </div>
 
-          <div className="lg:w-[70%] flex flex-col gap-20">
+          <div className="1025:w-[70%] flex flex-col gap-20">
             <SectionTitle
               text="Have more questions?\nWe’ve answers."
-              className="text-[42px] lg:text-5xl font-display tracking-tight leading-[1.1] lg:block hidden"
+              className="text-[42px] 1025:text-5xl font-display tracking-tight leading-[1.1] 1025:block hidden"
               once
             />
             <div className="flex flex-col gap-4">
@@ -195,7 +195,7 @@ const FAQSection = () => {
       </div>
       <div
         ref={rulerRef}
-        className="container mx-auto px-5 pt-20 lg:pt-30 overflow-hidden"
+        className="container mx-auto px-5 pt-20 1025:pt-30 overflow-hidden"
       >
         <div className="flex items-center gap-10 lg:gap-20">
           <motion.div

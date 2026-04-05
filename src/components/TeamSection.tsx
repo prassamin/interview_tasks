@@ -5,8 +5,6 @@ import {
   AnimatePresence,
   useScroll,
   useTransform,
-  useMotionValue,
-  useSpring,
 } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { Plus } from "lucide-react";
@@ -15,6 +13,7 @@ import SectionTitle from "./SectionTitle";
 import { Facebook } from "./icons/facebook";
 import { LinkedIn } from "./icons/linkedin";
 import { X } from "./icons/x";
+import { ParallaxImage } from "./ParallaxImage";
 
 const teamMembers = [
   {
@@ -52,27 +51,6 @@ const TeamCard = ({
   index: number;
   isMobile: boolean;
 }) => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springX = useSpring(mouseX, { stiffness: 150, damping: 20 });
-  const springY = useSpring(mouseY, { stiffness: 150, damping: 20 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const x = (e.clientX - centerX) / 10;
-    const y = (e.clientY - centerY) / 10;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-
   const delay = isMobile ? index * 0.1 : Math.floor(index / 2) * 0.2;
 
   return (
@@ -81,27 +59,15 @@ const TeamCard = ({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      whileHover={{
-        boxShadow:
-          "0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05)",
-      }}
       className="bg-background rounded-3xl p-2.5 flex flex-col gap-6 group"
     >
-      <div className="relative aspect-square rounded-2xl overflow-hidden bg-[#D2B691]">
-        <motion.div
-          style={{ x: springX, y: springY }}
-          className="absolute inset-0 w-[110%] -left-[5%] h-[110%] -top-[5%]"
-        >
-          <Image
-            src={member.image}
-            alt={member.name}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-        </motion.div>
-      </div>
+      <ParallaxImage
+        src={member.image}
+        alt={member.name}
+        containerClassName="aspect-square rounded-2xl bg-[#D2B691]"
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        parallaxAmount={10}
+      />
 
       <div className="flex flex-col gap-1 px-5 font-display">
         <h3 className="text-xl font-display tracking-tight text-black">
@@ -146,11 +112,11 @@ const TeamSection = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   return (
-    <section className="mt-15 lg:mt-20 xl:mt-30 font-sans">
+    <section className="max-1025:mt-15 max-1201:mt-20 mt-30 font-sans">
       <div className="container mx-auto px-5 2xl:px-0">
-        <div className="flex flex-col lg:flex-row gap-10 xl:gap-24 bg-white p-5 rounded-3xl">
+        <div className="flex flex-col 1025:flex-row gap-10 xl:gap-24 bg-white p-5 rounded-3xl">
           {/* left */}
-          <div className="lg:w-1/2 flex flex-col gap-12 lg:pt-23.75 lg:pl-20">
+          <div className="1025:w-1/2 flex flex-col gap-12 1025:pt-23.75 1025:pl-20">
             <div className="flex flex-col gap-4 pt-1">
               <span className="text-sm uppercase font-display">
                 OUR AVENGERS

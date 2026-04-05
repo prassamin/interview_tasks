@@ -14,11 +14,17 @@
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-funnel-display);
 
+  --breakpoint-1367: 1367px;
+  --breakpoint-1201: 1201px;
+  --breakpoint-1025: 1025px;
+  --breakpoint-992: 992px;
+  --breakpoint-768: 768px;
+
   --animate-shadow-pulse: shadow-pulse 1s ease-in-out infinite;
 }
 
 @utility container {
-  @apply max-[767px]:max-w-191.75 max-[1024px]:max-w-5xl max-w-330;
+  @apply max-768:max-w-191.75 max-1025:max-w-5xl max-w-330;
 }
 
 body {

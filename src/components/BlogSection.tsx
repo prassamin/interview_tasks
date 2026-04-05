@@ -54,10 +54,10 @@ const BlogSection = () => {
   });
 
   return (
-    <section className="mt-15 lg:mt-20 xl:mt-30 overflow-hidden font-sans">
+    <section className="max-1025:mt-15 max-1201:mt-20 mt-30 overflow-hidden font-sans">
       <div className="container mx-auto">
         {/* HEADER */}
-        <div className="flex flex-col items-center mb-16 xl:mb-24 px-5 mx-auto">
+        <div className="flex flex-col items-center max-1201:mb-16 mb-24 px-5 mx-auto">
           <span className="text-xs uppercase tracking-widest text-foreground mb-4 font-medium">
             Insights
           </span>
@@ -76,7 +76,7 @@ const BlogSection = () => {
             {blogs.map((blog, index) => (
               <div
                 key={index}
-                className={`flex-[0_0_98%] md:flex-[0_0_49.5%] lg:flex-[0_0_calc(100%/3)] pl-3 flex flex-col group gap-3 select-none ${
+                className={`flex-[0_0_98%] max-768:flex-[0_0_98%] max-1201:flex-[0_0_49.5%] flex-[0_0_calc(100%/3)] pl-3 flex flex-col group gap-3 select-none ${
                   index % 2 === 0 ? "flex-col" : "flex-col-reverse"
                 }`}
               >
