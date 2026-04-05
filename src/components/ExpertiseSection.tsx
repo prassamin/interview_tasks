@@ -101,7 +101,6 @@ const ExpertiseSection = () => {
           </motion.h2>
         </div>
 
-        {/* Accordion List */}
         <div className="flex flex-col border-t border-white/10 mt-10">
           {expertiseItems.map((item) => {
             const isOpen = activeIndex === item.id;
