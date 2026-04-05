@@ -146,7 +146,7 @@ const TeamSection = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   return (
-    <section className="py-20 lg:py-32 font-sans">
+    <section className="mt-15 lg:mt-20 xl:mt-30 font-sans">
       <div className="container mx-auto px-5 2xl:px-0">
         <div className="flex flex-col lg:flex-row gap-10 xl:gap-24 bg-white p-5 rounded-3xl">
           {/* left */}

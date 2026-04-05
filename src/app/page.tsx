@@ -1,4 +1,5 @@
 import BlogSection from "@/components/BlogSection";
+import AwardsSection from "@/components/AwardsSection";
 import TeamSection from "@/components/TeamSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -11,6 +12,7 @@ export default function Home() {
       <div className="h-screen flex items-center justify-center text-foreground/20 uppercase tracking-[0.5em] text-sm">
         Main Content Section
       </div>
+      <AwardsSection />
       <TeamSection />
       <FAQSection />
       <BlogSection />
