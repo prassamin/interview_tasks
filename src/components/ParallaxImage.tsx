@@ -15,6 +15,7 @@ interface ParallaxImageProps {
   containerClassName?: string;
   parallaxAmount?: number;
   priority?: boolean;
+  children?: React.ReactNode;
 }
 
 export const ParallaxImage = ({
@@ -27,6 +28,7 @@ export const ParallaxImage = ({
   containerClassName,
   parallaxAmount = 10,
   priority = false,
+  children,
 }: ParallaxImageProps) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -69,6 +71,7 @@ export const ParallaxImage = ({
           priority={priority}
         />
       </motion.div>
+      {children}
     </div>
   );
 };
