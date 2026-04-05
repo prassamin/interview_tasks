@@ -9,6 +9,7 @@ import NavigateToTop from "@/components/NavigateToTop";
 import FeedbackSection from "@/components/FeedbackSection";
 import HappyUsersSection from "@/components/HappyUsersSection";
 import HeroSection from "@/components/HeroSection";
+import ApproachSection from "@/components/ApproachSection";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
+      <ApproachSection />
       <HappyUsersSection />
       <FeedbackSection />
       <ContactSection />

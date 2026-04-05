@@ -8,6 +8,7 @@ interface SectionTitleProps {
   className?: string;
   delay?: number;
   once?: boolean;
+  speed?: number;
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = ({
@@ -15,16 +16,30 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   className,
   delay = 0,
   once = false,
+  speed = 1,
 }) => {
   const lines = text.split(/\\n|\n/);
+
+  const staggerDelay = 0.03 / speed;
+  const duration = 0.8 / speed;
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.03,
+        staggerChildren: 0.2 / speed,
         delayChildren: delay,
+      },
+    },
+  };
+
+  const lineVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: staggerDelay,
       },
     },
   };
@@ -38,7 +53,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.8,
+        duration,
         ease: [0.2, 0.65, 0.3, 0.9] as any,
       },
     },
@@ -53,7 +68,11 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       viewport={{ once, margin: "-100px" }}
     >
       {lines.map((line, lineIndex) => (
-        <React.Fragment key={lineIndex}>
+        <motion.span
+          key={lineIndex}
+          className="block overflow-hidden"
+          variants={lineVariants}
+        >
           {line.split(" ").map((word, wordIndex, wordArr) => (
             <span key={wordIndex} className="inline-block whitespace-nowrap">
               {word.split("").map((char, charIndex) => (
@@ -65,15 +84,12 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
                   {char}
                 </motion.span>
               ))}
-              {/* Add space between words, but not at the end of a line */}
               {wordIndex < wordArr.length - 1 && (
                 <span className="inline-block">&nbsp;</span>
               )}
             </span>
           ))}
-          {/* Add line break between lines */}
-          {lineIndex < lines.length - 1 && <br />}
-        </React.Fragment>
+        </motion.span>
       ))}
     </motion.h2>
   );
