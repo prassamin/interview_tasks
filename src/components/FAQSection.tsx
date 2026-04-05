@@ -56,7 +56,7 @@ const FAQSection = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
 
   return (
-    <section className="max-1025:mt-15 max-1201:mt-20 mt-30 font-sans overflow-hidden">
+    <section className="max-1025:mt-15 max-1201:mt-20 mt-30">
       <div className="container mx-auto px-5 flex flex-col">
         <span className="text-xs uppercase tracking-widest text-foreground mb-10 font-medium font-display border-b border-muted/10 py-3.5 w-full">
           FAQ & GET ANSWER

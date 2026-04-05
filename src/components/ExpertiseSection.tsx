@@ -1,10 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const expertiseItems = [
   {
@@ -46,7 +52,7 @@ const expertiseItems = [
 ];
 
 const ExpertiseSection = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(1);
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(1);
 
   return (
     <section

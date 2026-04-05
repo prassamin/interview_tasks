@@ -1,29 +1,12 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
-import {
-  motion,
-  useInView,
-  useMotionValue,
-  useTransform,
-  animate,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import { cn } from "@/lib/utils";
+import AnimatedNumber from "./AnimatedNumber";
 
 const ApproachSection = () => {
-  const countRef = React.useRef(null);
-  const isInView = useInView(countRef, { once: true, amount: 0.5 });
-  const countValue = useMotionValue(0);
-  const roundedValue = useTransform(countValue, (latest) => Math.round(latest));
-
-  React.useEffect(() => {
-    if (isInView) {
-      animate(countValue, 25, { duration: 1.5, ease: "easeOut" });
-    }
-  }, [isInView, countValue]);
-
   return (
     <section className="max-1025:mt-15 max-1201:mt-20 mt-30">
       <div className="container mx-auto px-5">
@@ -73,14 +56,12 @@ const ApproachSection = () => {
           />
         </div>
 
-        {/* Flex Layout Container */}
         <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap gap-2.5 items-stretch pt-20 lg:pt-0">
           {/* left card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            ref={countRef}
             className={cn(
               "w-full md:w-[calc(50%-5px)] lg:w-[23%] bg-white rounded-3xl p-5 flex flex-col justify-between order-1",
               "max-1367:p-3.75 pt-2.5 pb-7.5 pl-7.5 pr-7",
@@ -90,7 +71,7 @@ const ApproachSection = () => {
               <div className="border-b border-black/10 pb-7.5">
                 <div className="flex items-start">
                   <span className="text-[120px] font-display leading-none tracking-[-3.6px] text-black flex items-start">
-                    <motion.span>{roundedValue}</motion.span>
+                    <AnimatedNumber value={25} />
                     <span className="text-black/10 -mt-4">+</span>
                   </span>
                 </div>
@@ -122,7 +103,7 @@ const ApproachSection = () => {
                 ))}
               </div>
               <p className="text-black font-semibold">
-                1200+ happy users review
+                <AnimatedNumber value={1200} suffix="+" /> happy users review
               </p>
             </div>
           </motion.div>
@@ -264,7 +245,7 @@ const ApproachSection = () => {
                   >
                     <span className="text-sm">{item.label}</span>
                     <span className="text-sm opacity-60 font-medium">
-                      {item.val}%
+                      <AnimatedNumber value={item.val} suffix="%" />
                     </span>
                   </motion.div>
                 ))}
