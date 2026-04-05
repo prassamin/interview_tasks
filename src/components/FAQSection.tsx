@@ -58,7 +58,7 @@ const FAQSection = () => {
   return (
     <section className="mt-15 lg:mt-20 xl:mt-30 font-sans overflow-hidden">
       <div className="container mx-auto px-5 flex flex-col">
-        <span className="text-xs uppercase tracking-widest text-foreground/60 mb-10 font-medium border-b border-muted/10 py-3.5 w-full">
+        <span className="text-xs uppercase tracking-widest text-foreground mb-10 font-medium font-display border-b border-muted/10 py-3.5 w-full">
           FAQ & GET ANSWER
         </span>
         <div className="flex flex-col lg:flex-row  lg:items-end gap-16 xl:gap-44">

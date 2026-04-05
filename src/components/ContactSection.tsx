@@ -7,7 +7,7 @@ import SectionTitle from "./SectionTitle";
 
 const ContactSection = () => {
   return (
-    <section className="px-5 mb-15 lg:mb-20 xl:mb-32">
+    <section className="px-5 mt-15 lg:mt-20 xl:mt-30">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
