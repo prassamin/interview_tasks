@@ -3,10 +3,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-/**
- * A cinematic entrance loader representing the studio's "first strike" on a new project.
- * Features a sharp white line that divides the screen before splitting open to reveal content.
- */
 export function EntranceLoader() {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -15,7 +11,7 @@ export function EntranceLoader() {
     const timer = setTimeout(() => {
       setIsVisible(false);
       document.body.style.overflow = "auto";
-    }, 4500);
+    }, 2500);
 
     return () => {
       document.body.style.overflow = "auto";
@@ -38,7 +34,7 @@ export function EntranceLoader() {
             animate={{ height: 0 }}
             transition={{
               duration: 1.2,
-              delay: 1.8, // Exactly when the point reaches the right
+              delay: 1.8,
               ease: [0.77, 0, 0.175, 1],
             }}
             className="absolute top-0 left-0 w-full bg-black z-20 border-b border-white/10"
