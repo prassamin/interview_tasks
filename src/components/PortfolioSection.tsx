@@ -96,40 +96,41 @@ const PortfolioSection = () => {
                 )}
               >
                 {/* header */}
-                <ParallaxImage
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  parallaxAmount={10}
-                  className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
-                  containerClassName={cn(
-                    "rounded-[20px] bg-gray-100 transition-all duration-500 group/item aspect-video",
-                    isLarge && "h-80 md:h-120",
-                  )}
-                >
-                  <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20">
-                    <div className="flex items-center gap-2 text-white">
-                      <Image
-                        src={project.companyLogo}
-                        alt="Logo"
-                        width={28}
-                        height={28}
-                        className="brightness-0 invert w-30"
-                      />
+                  <ParallaxImage
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    onClick={() => window.open(project.url, "_blank")}
+                    parallaxAmount={10}
+                    className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                    containerClassName={cn(
+                      "rounded-[20px] bg-gray-100 transition-all duration-500 group/item aspect-video",
+                      isLarge && "h-80 md:h-120",
+                    )}
+                  >
+                    <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20">
+                      <div className="flex items-center gap-2 text-white">
+                        <Image
+                          src={project.companyLogo}
+                          alt="Logo"
+                          width={28}
+                          height={28}
+                          className="brightness-0 invert w-30"
+                        />
+                      </div>
                     </div>
-                  </div>
-
-                  <button className="bg-white absolute top-2 right-2 group-hover/item:opacity-100 group-hover/item:top-6 group-hover/item:right-6 md:group-hover/item:top-8 md:group-hover/item:right-8 transition-all duration-500 opacity-0 rounded-full p-3.5 text-black hover:bg-black hover:text-white">
-                    <ArrowUp
-                      className="rotate-45 transition-transform duration-500"
-                      size={22}
-                    />
-                  </button>
-
-                  <span className="text-white text-sm absolute left-2 bottom-2 opacity-0 group-hover/item:opacity-100 group-hover/item:bottom-6 group-hover/item:left-6 transition-all duration-500">
-                    {project.category.join(", ")}
-                  </span>
-                </ParallaxImage>
+  
+                    <button className="bg-white absolute top-2 right-2 group-hover/item:opacity-100 group-hover/item:top-6 group-hover/item:right-6 md:group-hover/item:top-8 md:group-hover/item:right-8 transition-all duration-500 opacity-0 rounded-full p-3.5 text-black hover:bg-black hover:text-white">
+                      <ArrowUp
+                        className="rotate-45 transition-transform duration-500"
+                        size={22}
+                      />
+                    </button>
+  
+                    <span className="text-white text-sm absolute left-2 bottom-2 opacity-0 group-hover/item:opacity-100 group-hover/item:bottom-6 group-hover/item:left-6 transition-all duration-500">
+                      {project.category.join(", ")}
+                    </span>
+                  </ParallaxImage>
 
                 {/* footer */}
                 <div className="flex justify-between items-center mt-3 bg-white px-4 py-5 rounded-xl">

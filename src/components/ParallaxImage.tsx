@@ -16,6 +16,7 @@ interface ParallaxImageProps {
   parallaxAmount?: number;
   priority?: boolean;
   children?: React.ReactNode;
+  onClick?: () => void;
 }
 
 export const ParallaxImage = ({
@@ -29,6 +30,7 @@ export const ParallaxImage = ({
   parallaxAmount = 10,
   priority = false,
   children,
+  onClick,
 }: ParallaxImageProps) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -51,10 +53,13 @@ export const ParallaxImage = ({
     mouseY.set(0);
   };
 
+  const Component: any = onClick ? "button" : "div";
+
   return (
-    <div
+    <Component
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
       className={cn("relative overflow-hidden", containerClassName)}
     >
       <motion.div
@@ -72,6 +77,6 @@ export const ParallaxImage = ({
         />
       </motion.div>
       {children}
-    </div>
+    </Component>
   );
 };
