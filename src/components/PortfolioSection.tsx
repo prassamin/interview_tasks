@@ -63,7 +63,7 @@ const projects = [
 
 const PortfolioSection = () => {
   return (
-    <section className="max-1025:mt-15 max-1201:mt-20 mt-30 font-sans overflow-hidden">
+    <section className="max-1025:mt-15 max-1201:mt-20 mt-30">
       <div className="container mx-auto px-5 flex flex-col">
         <div className="flex flex-col mb-20">
           <span className="text-xs uppercase tracking-widest mb-10 font-display font-medium border-b border-black/5 py-3.5 w-full">

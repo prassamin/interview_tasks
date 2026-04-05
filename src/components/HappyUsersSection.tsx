@@ -27,7 +27,7 @@ const HappyUsersSection = () => {
   ];
 
   return (
-    <section className="max-1025:mt-15 max-1201:mt-20 mt-30 font-sans">
+    <section className="max-1025:mt-15 max-1201:mt-20 mt-30">
       <div className="container mx-auto px-5 flex flex-col">
         <div className="text-xs uppercase tracking-widest text-foreground mb-4 font-display font-medium py-6 w-full flex justify-between items-end">
           <span>HAPPY USERS</span>

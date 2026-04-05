@@ -82,14 +82,14 @@ const FeedbackSection = () => {
   });
 
   return (
-    <section className="max-1025:mt-15 max-1201:mt-20 mt-30 font-sans overflow-hidden">
+    <section className="max-1025:mt-15 max-1201:mt-20 mt-30">
       <div className="container mx-auto px-5 flex flex-col">
         <span className="text-xs uppercase tracking-widest text-foreground mb-10 font-medium font-display border-b border-muted/10 py-3.5 w-full">
           user feedbacks
         </span>
         <div className="flex flex-col gap-25">
           <div className="flex justify-end">
-            <motion.div
+            <motion.h2
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
@@ -114,7 +114,7 @@ const FeedbackSection = () => {
                 ))}
               </div>
               Let’s build your brand—together.
-            </motion.div>
+            </motion.h2>
           </div>
           <div
             className="overflow-hidden cursor-grab active:cursor-grabbing"

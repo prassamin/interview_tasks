@@ -25,7 +25,7 @@ const ApproachSection = () => {
   }, [isInView, countValue]);
 
   return (
-    <section className="max-1025:mt-15 max-1201:mt-20 mt-30 overflow-hidden">
+    <section className="max-1025:mt-15 max-1201:mt-20 mt-30">
       <div className="container mx-auto px-5">
         {/* header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-10 lg:mb-30">
