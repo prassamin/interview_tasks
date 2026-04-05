@@ -3,6 +3,7 @@ import { Funnel_Display, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import GSAPProvider from "@/providers/GSAPProvider";
+import { EntranceLoader } from "@/components/EntranceLoader";
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
@@ -38,6 +39,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <GSAPProvider>
+          <EntranceLoader />
           <CustomCursor />
           {children}
         </GSAPProvider>
